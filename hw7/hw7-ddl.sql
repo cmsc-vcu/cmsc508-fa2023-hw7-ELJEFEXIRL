@@ -222,36 +222,36 @@ CREATE TABLE people_roles (
 
 INSERT INTO people_roles (people_id, role_id, date_role_acquired) VALUES
 -- Person 1 is Developer
-(1, 20, '2021-01-10'),
+(1, 2, '2021-01-10'),
 
 -- Person 2 is Boss, Mentor
-(2, 50, '2021-02-15'), -- Assuming 2 is Boss
-(2, 60, '2021-02-20'), -- Assuming 3 is Mentor
+(2, 5, '2021-02-15'), -- Assuming 2 is Boss
+(2, 6, '2021-02-20'), -- Assuming 3 is Mentor
 
 -- Person 3 is Developer and Team Lead
-(3, 20, '2021-03-20'), -- Assuming 1 is Developer
-(3, 40, '2021-03-25'), -- Assuming 4 is Team Lead
+(3, 2, '2021-03-20'), -- Assuming 1 is Developer
+(3, 4, '2021-03-25'), -- Assuming 4 is Team Lead
 
 -- Person 4 is Recruit
-(4, 30, '2021-04-10'), -- Assuming 5 is Recruit
+(4, 3, '2021-04-10'), -- Assuming 5 is Recruit
 
 -- Person 5 is Recruit
-(5, 30, '2021-05-15'),
+(5, 3, '2021-05-15'),
 
 -- Person 6 is Developer and Designer
-(6, 20, '2021-06-10'),
-(6, 10, '2021-06-15'), -- Assuming 6 is Designer
+(6, 2, '2021-06-10'),
+(6, 1, '2021-06-15'), -- Assuming 6 is Designer
 
 -- Person 7 is Designer
-(7, 10, '2021-07-20'),
+(7, 1, '2021-07-20'),
 
 -- Person 8 is Designer and Team Lead
-(8, 10, '2021-08-15'),
-(8, 40, '2021-08-20'),
+(8, 1, '2021-08-15'),
+(8, 4, '2021-08-20'),
 
 -- Person 9 is Developer
-(9, 20, '2021-09-10'),
+(9, 2, '2021-09-10'),
 
 -- Person 10 is Developer and Designer
-(10, 20, '2021-10-05'),
-(10, 10, '2021-10-10');
+(10, 2, '2021-10-05'),
+(10, 1, '2021-10-10');
