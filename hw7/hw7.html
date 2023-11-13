@@ -3373,53 +3373,72 @@ z-index: 1000;
 
 </header>
 
-<p>(include a brief description of what is in this document)</p>
-<p>(Please clean up any comments that I included. This is a scaffold document.)</p>
 <p>GITHUB URL: https://github.com/cmsc-vcu/cmsc508-fa2023-hw7-ELJEFEXIRL</p>
-<div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-stdout">
-<pre><code>Missing HW7_DB_NAME in .env file</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="4">
-<div class="cell-output cell-output-stdout">
-<pre><code>Database/SQL Error:
-(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_larkinb&#39;@&#39;%&#39; to database &#39;None&#39;&quot;)
-(Background on this error at: https://sqlalche.me/e/20/e3q8)
-</code></pre>
-</div>
-</div>
 <section id="overview-and-description" class="level2">
 <h2 class="anchored" data-anchor-id="overview-and-description">Overview and description</h2>
-<p>(briefly describe the project and the database)</p>
+<p>The database is like a big organizer for a company’s staff. It has a table for skills where stuff like plumbing and painting are listed with details. Then there’s a table for all the employees, where you can find their names, emails, and even their LinkedIn profiles. Another table connects which employee knows what skills, and there’s also one for different job roles in the company, like Designer or Developer. Finally, there’s a table that shows who does what job and when they started it. So basically, it’s all about who works at the company, what they can do, and what their job is.</p>
 </section>
 <section id="crows-foot-diagram" class="level2">
 <h2 class="anchored" data-anchor-id="crows-foot-diagram">Crows-foot diagram</h2>
-<p>(add a description of the diagram and what the reader is seeing.)</p>
+<p>THE READER IS SEEING A VISUAL MAP OF THE RESUME DATABAS WE ARE BUILDING IN THIS ASSIGNMENT</p>
+<center>
+<p>:::: {.columns}</p>
+<div class="column">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <div>
 <pre class="mermaid mermaid-js">erDiagram
-    CUSTOMER ||--o{ ORDER : places
-    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
-    CUSTOMER{
-        int id
+    PEOPLE ||--o{ PEOPLESKILLS : &quot;has&quot;
+    SKILLS ||--o{ PEOPLESKILLS : &quot;included_in&quot;
+    PEOPLE ||--o{ PEOPLEROLES : &quot;occupies&quot;
+    ROLES ||--o{ PEOPLEROLES : &quot;assigned_to&quot;
+    PEOPLE {
+        int id 
         string first_name
         string last_name
+        string email
+        string linkedin_url
+        string headshot_url
+        string discord_handle
+        string brief_bio
+        date date_joined
     }
-    DELIVERY-ADDRESS {
-        int id
+    SKILLS {
+        int id 
+        string name
+        string description
+        string tag
+        string url
+        string time_commitment
+    }
+    PEOPLESKILLS {
+        int id 
+        int skills_id 
+        int people_id 
+        date date_acquired
+    }
+    ROLES {
+        int id 
+        string name
+        int sort_priority
+    }
+    PEOPLEROLES {
+        int id 
+        int people_id 
+        int role_id 
+        date date_role_acquired
     }
 </pre>
 </div>
 </div>
 </div>
 </div>
-</section>
+</div>
+<p>::: {.column}</p>
+</center></section>
 <section id="examples-of-data-in-the-database" class="level2">
 <h2 class="anchored" data-anchor-id="examples-of-data-in-the-database">Examples of data in the database</h2>
-<p>The database is like a big organizer for a company’s staff. It has a table for skills where stuff like plumbing and painting are listed with details. Then there’s a table for all the employees, where you can find their names, emails, and even their LinkedIn profiles. Another table connects which employee knows what skills, and there’s also one for different job roles in the company, like Designer or Developer. Finally, there’s a table that shows who does what job and when they started it. So basically, it’s all about who works at the company, what they can do, and what their job is.</p>
 <section id="people-table" class="level3">
 <h3 class="anchored" data-anchor-id="people-table">People table</h3>
 <p>The <em>people</em> table contains elements that describe …</p>
@@ -3428,12 +3447,15 @@ z-index: 1000;
 <div class="cell-output cell-output-stdout">
 <pre><code>An error occurred:
 
-(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_larkinb&#39;@&#39;%&#39; to database &#39;None&#39;&quot;)
-(Background on this error at: https://sqlalche.me/e/20/e3q8)
+(pymysql.err.ProgrammingError) (1146, &quot;Table &#39;23FA_hr_larkinb.people&#39; doesn&#39;t exist&quot;)
+[SQL: 
+select * from people;
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
 
 Ignoring and moving on.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="23">
 <div>
 
 
@@ -3459,12 +3481,15 @@ Ignoring and moving on.</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>An error occurred:
 
-(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_larkinb&#39;@&#39;%&#39; to database &#39;None&#39;&quot;)
-(Background on this error at: https://sqlalche.me/e/20/e3q8)
+(pymysql.err.ProgrammingError) (1146, &quot;Table &#39;23FA_hr_larkinb.skills&#39; doesn&#39;t exist&quot;)
+[SQL: 
+select * from skills;
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
 
 Ignoring and moving on.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="24">
 <div>
 
 
@@ -3490,12 +3515,15 @@ Ignoring and moving on.</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>An error occurred:
 
-(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_larkinb&#39;@&#39;%&#39; to database &#39;None&#39;&quot;)
-(Background on this error at: https://sqlalche.me/e/20/e3q8)
+(pymysql.err.ProgrammingError) (1146, &quot;Table &#39;23FA_hr_larkinb.roles&#39; doesn&#39;t exist&quot;)
+[SQL: 
+select * from roles;
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
 
 Ignoring and moving on.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="25">
 <div>
 
 
@@ -3522,21 +3550,24 @@ Ignoring and moving on.</code></pre>
 <h1>List skill names, tags, and descriptions ordered by name</h1>
 <p>(here a sample query)</p>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sql <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ss">select * from people</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sql <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ss">select * from people</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>(and here is a sample result from the query)</p>
 <div class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
 <pre><code>An error occurred:
 
-(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_larkinb&#39;@&#39;%&#39; to database &#39;None&#39;&quot;)
-(Background on this error at: https://sqlalche.me/e/20/e3q8)
+(pymysql.err.ProgrammingError) (1146, &quot;Table &#39;23FA_hr_larkinb.people&#39; doesn&#39;t exist&quot;)
+[SQL: 
+select * from people
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
 
 Ignoring and moving on.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <div>
 
 

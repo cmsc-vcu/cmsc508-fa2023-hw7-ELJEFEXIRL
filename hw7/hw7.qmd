@@ -10,10 +10,6 @@ format:
         code-copy: true
 ---
 
-(include a brief description of what is in this document)
-
-(Please clean up any comments that I included.  This is a scaffold document.)
-
 GITHUB URL:  https://github.com/cmsc-vcu/cmsc508-fa2023-hw7-ELJEFEXIRL
 
 ```{python}
@@ -92,30 +88,65 @@ except Exception as e:
 
 ## Overview and description
 
-(briefly describe the project and the database)
 The database is like a big organizer for a company's staff. It has a table for skills where stuff like plumbing and painting are listed with details. Then there's a table for all the employees, where you can find their names, emails, and even their LinkedIn profiles. Another table connects which employee knows what skills, and there's also one for different job roles in the company, like Designer or Developer. Finally, there's a table that shows who does what job and when they started it. So basically, it's all about who works at the company, what they can do, and what their job is.
+
 ## Crows-foot diagram
 
-(add a description of the diagram and what the reader is seeing.)
+THE READER IS SEEING A VISUAL MAP OF THE RESUME DATABAS WE ARE BUILDING IN THIS ASSIGNMENT
 
+<center>
+:::: {.columns}
+
+::: {.column}
 ```{mermaid}
-%%| echo: false
 erDiagram
-    CUSTOMER ||--o{ ORDER : places
-    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
-    CUSTOMER{
-        int id
+    PEOPLE ||--o{ PEOPLESKILLS : "has"
+    SKILLS ||--o{ PEOPLESKILLS : "included_in"
+    PEOPLE ||--o{ PEOPLEROLES : "occupies"
+    ROLES ||--o{ PEOPLEROLES : "assigned_to"
+    PEOPLE {
+        int id 
         string first_name
         string last_name
+        string email
+        string linkedin_url
+        string headshot_url
+        string discord_handle
+        string brief_bio
+        date date_joined
     }
-    DELIVERY-ADDRESS {
-        int id
+    SKILLS {
+        int id 
+        string name
+        string description
+        string tag
+        string url
+        string time_commitment
+    }
+    PEOPLESKILLS {
+        int id 
+        int skills_id 
+        int people_id 
+        date date_acquired
+    }
+    ROLES {
+        int id 
+        string name
+        int sort_priority
+    }
+    PEOPLEROLES {
+        int id 
+        int people_id 
+        int role_id 
+        date date_role_acquired
     }
 ```
+:::
+::: {.column}
+
+
 
 ## Examples of data in the database
-
-
 
 ### People table
 
