@@ -37,7 +37,7 @@ config_map = {
     'user':'CMSC508_USER',
     'password':'CMSC508_PASSWORD',
     'host':'CMSC508_HOST',
-    'database':'HW7_DB_NAME'
+    'database':'CMSC508_DB_NAME'
 }
 # load and store credentials
 load_dotenv()
@@ -93,7 +93,7 @@ except Exception as e:
 ## Overview and description
 
 (briefly describe the project and the database)
-
+The database is like a big organizer for a company's staff. It has a table for skills where stuff like plumbing and painting are listed with details. Then there's a table for all the employees, where you can find their names, emails, and even their LinkedIn profiles. Another table connects which employee knows what skills, and there's also one for different job roles in the company, like Designer or Developer. Finally, there's a table that shows who does what job and when they started it. So basically, it's all about who works at the company, what they can do, and what their job is.
 ## Crows-foot diagram
 
 (add a description of the diagram and what the reader is seeing.)
@@ -115,7 +115,7 @@ erDiagram
 
 ## Examples of data in the database
 
-The database is like a big organizer for a company's staff. It has a table for skills where stuff like plumbing and painting are listed with details. Then there's a table for all the employees, where you can find their names, emails, and even their LinkedIn profiles. Another table connects which employee knows what skills, and there's also one for different job roles in the company, like Designer or Developer. Finally, there's a table that shows who does what job and when they started it. So basically, it's all about who works at the company, what they can do, and what their job is.
+
 
 ### People table
 

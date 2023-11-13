@@ -85,7 +85,11 @@ INSERT INTO people (first_name, last_name, email, linkedin_url, headshot_url, di
 ('Mike', 'Brown', 'mike.brown@example.com', 'http://linkedin.com/in/mikebrown', 'http://headshot_url_mike.com', 'mike_discord', 'Mike is a project manager known for his effective team leadership.', '2021-03-20'),
 ('Clark', 'Kent', 'clark.kent@example.com', 'http://linkedin.com/in/clarkkent', 'http://headshot_url_clark.com', 'clark_discord', 'Clark specializes in digital marketing with a focus on social media.', '2021-04-25'),
 ('David', 'Johnson', 'david.johnson@example.com', 'http://linkedin.com/in/davidjohnson', 'http://headshot_url_david.com', 'david_discord', 'David is an IT consultant with extensive experience in cybersecurity.', '2021-05-30'),
-('Sophia', 'Lopez', 'sophia.lopez@example.com', 'http://linkedin.com/in/sophialopez', 'http://headshot_url_sophia.com', 'sophia_discord', 'Sophia, a talented graphic designer, brings creativity to branding projects.', '2021-06-15');
+('Sophia', 'Lopez', 'sophia.lopez@example.com', 'http://linkedin.com/in/sophialopez', 'http://headshot_url_sophia.com', 'sophia_discord', 'Sophia, a talented graphic designer, brings creativity to branding projects.', '2021-06-15'),
+('Bruce', 'Wayne', 'bruce.wayne@example.com', 'http://linkedin.com/in/brucewayne', 'http://headshot_url_bruce.com', 'bruce_discord', 'Bruce is a software engineer with a knack for solving complex problems.', '2021-07-10'),
+('Diana', 'Prince', 'diana.prince@example.com', 'http://linkedin.com/in/dianaprince', 'http://headshot_url_diana.com', 'diana_discord', 'Diana is a data analyst with a strong background in statistics and machine learning.', '2021-08-05'),
+('Martha', 'Kent', 'martha.kent@example.com', 'http://linkedin.com/in/marthakent', 'http://headshot_url_martha.com', 'martha_discord', 'Martha, a seasoned product manager, excels in driving projects to success.', '2021-09-20'),
+('Peter', 'Parker', 'peter.parker@example.com', 'http://linkedin.com/in/peterparker', 'http://headshot_url_peter.com', 'peter_discord', 'Peter is a creative content writer with a flair for engaging and informative storytelling.', '2021-10-15');
 
 
 # Section 6

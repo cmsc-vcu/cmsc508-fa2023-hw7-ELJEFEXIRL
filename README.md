@@ -1,1 +1,2 @@
 # cmsc508-fa2023-hw7-template
+this project creates a database that tracks the skills, roles, and profiles of employees in a company, detailing everything from individual expertise to job responsibilities. It's a comprehensive system to manage and understand the workforce, their capabilities, and their roles within the organization.
