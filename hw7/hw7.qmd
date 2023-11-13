@@ -1,7 +1,7 @@
 ---
 title: Homework 7 - Creating a resume database
-author: (your name goes here!)
-date: last-modified
+author: ISABELLA LARKIN
+date: 11/12/23
 format:
     html:
         theme: cosmo
@@ -14,7 +14,7 @@ format:
 
 (Please clean up any comments that I included.  This is a scaffold document.)
 
-GITHUB URL:  <your URL goes here!>
+GITHUB URL:  https://github.com/cmsc-vcu/cmsc508-fa2023-hw7-ELJEFEXIRL
 
 ```{python}
 #| eval: true
@@ -115,14 +115,14 @@ erDiagram
 
 ## Examples of data in the database
 
-For the people, skills, and roles tables, provide a description of each table and it's contents. Then provide a listing of the entire table.
+The database is like a big organizer for a company's staff. It has a table for skills where stuff like plumbing and painting are listed with details. Then there's a table for all the employees, where you can find their names, emails, and even their LinkedIn profiles. Another table connects which employee knows what skills, and there's also one for different job roles in the company, like Designer or Developer. Finally, there's a table that shows who does what job and when they started it. So basically, it's all about who works at the company, what they can do, and what their job is.
 
 ### People table
 
 The *people* table contains elements that describe ... 
 
 Below is a list of data in the *people* table.
-
+IT SAYS MY PEOPLE TABLE DOESNT EXIST BUT I LITERALLY SEE IT IN PHP MY ADMIN.. LIKE HUH
 ```{python}
 #| echo: false
 #| eval: true
@@ -149,8 +149,17 @@ Below is a list of data in the *skills* table.
 ```{python}
 #| echo: false
 #| eval: true
-
-## Add code to list roles table here
+sql = f"""
+select * from skills;
+"""
+try:
+    df = pd.read_sql(sql, cnx)
+    df
+except Exception as e:
+    message = str(e)
+    print(f"An error occurred:\n\n{message}\n\nIgnoring and moving on.")
+    df = pd.DataFrame()
+df
 ```
 
 ### Roles table
@@ -162,8 +171,17 @@ Below is a list of data in the *roles* table.
 ```{python}
 #| echo: false
 #| eval: true
-
-## Add code to list roles table here
+sql = f"""
+select * from roles;
+"""
+try:
+    df = pd.read_sql(sql, cnx)
+    df
+except Exception as e:
+    message = str(e)
+    print(f"An error occurred:\n\n{message}\n\nIgnoring and moving on.")
+    df = pd.DataFrame()
+df
 ```
 
 
@@ -200,30 +218,64 @@ df
 
 
 ### List people names and email addresses ordered by last_name
+SELECT first_name, last_name, email 
+FROM people 
+ORDER BY last_name;
 
 
 ### List skill names of Person 1
+SELECT s.name 
+FROM skills s 
+JOIN peopleskills ps ON s.id = ps.skills_id 
+WHERE ps.people_id = 1;
 
 
 ### List people names with Skill 6
+SELECT p.first_name, p.last_name 
+FROM people p 
+JOIN peopleskills ps ON p.id = ps.people_id 
+WHERE ps.skills_id = 6;
 
 
 ### List people with a DEVELOPER role
+SELECT p.first_name, p.last_name 
+FROM people p 
+JOIN people_roles pr ON p.id = pr.people_id 
+JOIN roles r ON pr.role_id = r.id 
+WHERE r.name = 'Developer';
 
 
 ### List names and email addresses of people without skills
+SELECT p.first_name, p.last_name, p.email 
+FROM people p 
+LEFT JOIN peopleskills ps ON p.id = ps.people_id 
+WHERE ps.id IS NULL;
 
 
 ### List names and tags of unused skills
+SELECT s.name, s.tag 
+FROM skills s 
+LEFT JOIN peopleskills ps ON s.id = ps.skills_id 
+WHERE ps.id IS NULL;
 
 
 ### List people names and skill names with the BOSS role
+SELECT p.first_name, p.last_name, s.name AS skill_name 
+FROM people p 
+JOIN people_roles pr ON p.id = pr.people_id 
+JOIN roles r ON pr.role_id = r.id 
+JOIN peopleskills ps ON p.id = ps.people_id 
+JOIN skills s ON ps.skills_id = s.id 
+WHERE r.name = 'Boss';
 
 
 ### List ids and names of unused roles
+SELECT r.id, r.name 
+FROM roles r 
+LEFT JOIN people_roles pr ON r.id = pr.role_id 
+WHERE pr.id IS NULL;
 
 
 ## Reflection
 
-(Write a paragraph expressing your thoughts, feelings, and insights about your experience with this assignment.  Pause and breath before writing - I'm trying to encourage critical thinking and self-awareness while allowing you to explore the connections between theory and practice. And yes, delete this paragraph.)
-
+To be honest this assignment was a little confusing becasuse i did not understand how to run my ddl sql code on my active connection i vs code so i just did it piece by piece in php my admin. Also my active connection was just not cooperating with me, but i kinda fiex it in the end. HW 6 and 7 are a lil weird to me because im so used to doing everything in php my admin or on paper. But I am adapting.
