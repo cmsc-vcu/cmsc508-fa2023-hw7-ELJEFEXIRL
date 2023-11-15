@@ -171,6 +171,8 @@ except Exception as e:
 df
 ```
 
+
+
 ### Skills table
 
 The *skills* table contains elements that describe ... 

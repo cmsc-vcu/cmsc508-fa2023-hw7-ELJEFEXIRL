@@ -3444,18 +3444,7 @@ z-index: 1000;
 <p>The <em>people</em> table contains elements that describe …</p>
 <p>Below is a list of data in the <em>people</em> table. IT SAYS MY PEOPLE TABLE DOESNT EXIST BUT I LITERALLY SEE IT IN PHP MY ADMIN.. LIKE HUH</p>
 <div class="cell" data-execution_count="5">
-<div class="cell-output cell-output-stdout">
-<pre><code>An error occurred:
-
-(pymysql.err.ProgrammingError) (1146, &quot;Table &#39;23FA_hr_larkinb.people&#39; doesn&#39;t exist&quot;)
-[SQL: 
-select * from people;
-]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-
-Ignoring and moving on.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -3463,9 +3452,138 @@ Ignoring and moving on.</code></pre>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">first_name</th>
+<th data-quarto-table-cell-role="th">last_name</th>
+<th data-quarto-table-cell-role="th">email</th>
+<th data-quarto-table-cell-role="th">linkedin_url</th>
+<th data-quarto-table-cell-role="th">headshot_url</th>
+<th data-quarto-table-cell-role="th">discord_handle</th>
+<th data-quarto-table-cell-role="th">brief_bio</th>
+<th data-quarto-table-cell-role="th">date_joined</th>
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>John</td>
+<td>Doe</td>
+<td>john.doe@example.com</td>
+<td>http://linkedin.com/in/johndoe</td>
+<td>http://headshot_url_john.com</td>
+<td>john_discord</td>
+<td>John is a skilled developer with a passion for...</td>
+<td>2021-01-10</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>Jane</td>
+<td>Smith</td>
+<td>jane.smith@example.com</td>
+<td>http://linkedin.com/in/janesmith</td>
+<td>http://headshot_url_jane.com</td>
+<td>jane_discord</td>
+<td>Jane, an experienced designer, excels in creat...</td>
+<td>2021-02-15</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>Mike</td>
+<td>Brown</td>
+<td>mike.brown@example.com</td>
+<td>http://linkedin.com/in/mikebrown</td>
+<td>http://headshot_url_mike.com</td>
+<td>mike_discord</td>
+<td>Mike is a project manager known for his effect...</td>
+<td>2021-03-20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>Clark</td>
+<td>Kent</td>
+<td>clark.kent@example.com</td>
+<td>http://linkedin.com/in/clarkkent</td>
+<td>http://headshot_url_clark.com</td>
+<td>clark_discord</td>
+<td>Clark specializes in digital marketing with a ...</td>
+<td>2021-04-25</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>David</td>
+<td>Johnson</td>
+<td>david.johnson@example.com</td>
+<td>http://linkedin.com/in/davidjohnson</td>
+<td>http://headshot_url_david.com</td>
+<td>david_discord</td>
+<td>David is an IT consultant with extensive exper...</td>
+<td>2021-05-30</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>6</td>
+<td>Sophia</td>
+<td>Lopez</td>
+<td>sophia.lopez@example.com</td>
+<td>http://linkedin.com/in/sophialopez</td>
+<td>http://headshot_url_sophia.com</td>
+<td>sophia_discord</td>
+<td>Sophia, a talented graphic designer, brings cr...</td>
+<td>2021-06-15</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>7</td>
+<td>Bruce</td>
+<td>Wayne</td>
+<td>bruce.wayne@example.com</td>
+<td>http://linkedin.com/in/brucewayne</td>
+<td>http://headshot_url_bruce.com</td>
+<td>bruce_discord</td>
+<td>Bruce is a software engineer with a knack for ...</td>
+<td>2021-07-10</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>8</td>
+<td>Diana</td>
+<td>Prince</td>
+<td>diana.prince@example.com</td>
+<td>http://linkedin.com/in/dianaprince</td>
+<td>http://headshot_url_diana.com</td>
+<td>diana_discord</td>
+<td>Diana is a data analyst with a strong backgrou...</td>
+<td>2021-08-05</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>9</td>
+<td>Martha</td>
+<td>Kent</td>
+<td>martha.kent@example.com</td>
+<td>http://linkedin.com/in/marthakent</td>
+<td>http://headshot_url_martha.com</td>
+<td>martha_discord</td>
+<td>Martha, a seasoned product manager, excels in ...</td>
+<td>2021-09-20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>10</td>
+<td>Peter</td>
+<td>Parker</td>
+<td>peter.parker@example.com</td>
+<td>http://linkedin.com/in/peterparker</td>
+<td>http://headshot_url_peter.com</td>
+<td>peter_discord</td>
+<td>Peter is a creative content writer with a flai...</td>
+<td>2021-10-15</td>
+</tr>
 </tbody>
 </table>
 
@@ -3478,18 +3596,7 @@ Ignoring and moving on.</code></pre>
 <p>The <em>skills</em> table contains elements that describe …</p>
 <p>Below is a list of data in the <em>skills</em> table.</p>
 <div class="cell" data-execution_count="6">
-<div class="cell-output cell-output-stdout">
-<pre><code>An error occurred:
-
-(pymysql.err.ProgrammingError) (1146, &quot;Table &#39;23FA_hr_larkinb.skills&#39; doesn&#39;t exist&quot;)
-[SQL: 
-select * from skills;
-]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-
-Ignoring and moving on.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -3497,9 +3604,87 @@ Ignoring and moving on.</code></pre>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">description</th>
+<th data-quarto-table-cell-role="th">tag</th>
+<th data-quarto-table-cell-role="th">url</th>
+<th data-quarto-table-cell-role="th">time_commitment</th>
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>HANDYMAN</td>
+<td>FIXES ALL MY FAILED DIY PROJECTS</td>
+<td>Skill 1</td>
+<td>http://url_for_skill_1.com</td>
+<td>10 hours</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>PLUMMER</td>
+<td>UNCLOGS MY TOILET AFTER TACO BELL</td>
+<td>Skill 2</td>
+<td>http://url_for_skill_2.com</td>
+<td>20 hours</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>PAINTER</td>
+<td>MAKES MY HOUSE LOOK PRETTY</td>
+<td>Skill 3</td>
+<td>http://url_for_skill_3.com</td>
+<td>15 hours</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>CHEF</td>
+<td>MAKES GOOD GRUB</td>
+<td>Skill 4</td>
+<td>http://url_for_skill_4.com</td>
+<td>5 hours</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>TEACHER</td>
+<td>PROVIDES EDUCATION TO CHILDREN</td>
+<td>Skill 5</td>
+<td>http://url_for_skill_5.com</td>
+<td>30 hours</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>6</td>
+<td>PHARMACIST</td>
+<td>HELPS GIVE MEDICINE</td>
+<td>Skill 6</td>
+<td>http://url_for_skill_6.com</td>
+<td>25 hours</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>7</td>
+<td>NURSE</td>
+<td>A MINI DOCTOR</td>
+<td>Skill 7</td>
+<td>http://url_for_skill_7.com</td>
+<td>35 hours</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>8</td>
+<td>STRIPPER</td>
+<td>AN EXOTIC DANCER</td>
+<td>Skill 8</td>
+<td>http://url_for_skill_8.com</td>
+<td>40 hours</td>
+</tr>
 </tbody>
 </table>
 
@@ -3512,18 +3697,7 @@ Ignoring and moving on.</code></pre>
 <p>The <em>roles</em> table contains elements that describe …</p>
 <p>Below is a list of data in the <em>roles</em> table.</p>
 <div class="cell" data-execution_count="7">
-<div class="cell-output cell-output-stdout">
-<pre><code>An error occurred:
-
-(pymysql.err.ProgrammingError) (1146, &quot;Table &#39;23FA_hr_larkinb.roles&#39; doesn&#39;t exist&quot;)
-[SQL: 
-select * from roles;
-]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-
-Ignoring and moving on.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -3531,9 +3705,48 @@ Ignoring and moving on.</code></pre>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">sort_priority</th>
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>Designer</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>Developer</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>Recruit</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>Team Lead</td>
+<td>40</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>Boss</td>
+<td>50</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>6</td>
+<td>Mentor</td>
+<td>60</td>
+</tr>
 </tbody>
 </table>
 
@@ -3550,24 +3763,13 @@ Ignoring and moving on.</code></pre>
 <h1>List skill names, tags, and descriptions ordered by name</h1>
 <p>(here a sample query)</p>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sql <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ss">select * from people</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sql <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ss">select * from people</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>(and here is a sample result from the query)</p>
 <div class="cell" data-execution_count="9">
-<div class="cell-output cell-output-stdout">
-<pre><code>An error occurred:
-
-(pymysql.err.ProgrammingError) (1146, &quot;Table &#39;23FA_hr_larkinb.people&#39; doesn&#39;t exist&quot;)
-[SQL: 
-select * from people
-]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-
-Ignoring and moving on.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="27">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
 
@@ -3575,9 +3777,138 @@ Ignoring and moving on.</code></pre>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">first_name</th>
+<th data-quarto-table-cell-role="th">last_name</th>
+<th data-quarto-table-cell-role="th">email</th>
+<th data-quarto-table-cell-role="th">linkedin_url</th>
+<th data-quarto-table-cell-role="th">headshot_url</th>
+<th data-quarto-table-cell-role="th">discord_handle</th>
+<th data-quarto-table-cell-role="th">brief_bio</th>
+<th data-quarto-table-cell-role="th">date_joined</th>
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>John</td>
+<td>Doe</td>
+<td>john.doe@example.com</td>
+<td>http://linkedin.com/in/johndoe</td>
+<td>http://headshot_url_john.com</td>
+<td>john_discord</td>
+<td>John is a skilled developer with a passion for...</td>
+<td>2021-01-10</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>Jane</td>
+<td>Smith</td>
+<td>jane.smith@example.com</td>
+<td>http://linkedin.com/in/janesmith</td>
+<td>http://headshot_url_jane.com</td>
+<td>jane_discord</td>
+<td>Jane, an experienced designer, excels in creat...</td>
+<td>2021-02-15</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>Mike</td>
+<td>Brown</td>
+<td>mike.brown@example.com</td>
+<td>http://linkedin.com/in/mikebrown</td>
+<td>http://headshot_url_mike.com</td>
+<td>mike_discord</td>
+<td>Mike is a project manager known for his effect...</td>
+<td>2021-03-20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>Clark</td>
+<td>Kent</td>
+<td>clark.kent@example.com</td>
+<td>http://linkedin.com/in/clarkkent</td>
+<td>http://headshot_url_clark.com</td>
+<td>clark_discord</td>
+<td>Clark specializes in digital marketing with a ...</td>
+<td>2021-04-25</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>David</td>
+<td>Johnson</td>
+<td>david.johnson@example.com</td>
+<td>http://linkedin.com/in/davidjohnson</td>
+<td>http://headshot_url_david.com</td>
+<td>david_discord</td>
+<td>David is an IT consultant with extensive exper...</td>
+<td>2021-05-30</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>6</td>
+<td>Sophia</td>
+<td>Lopez</td>
+<td>sophia.lopez@example.com</td>
+<td>http://linkedin.com/in/sophialopez</td>
+<td>http://headshot_url_sophia.com</td>
+<td>sophia_discord</td>
+<td>Sophia, a talented graphic designer, brings cr...</td>
+<td>2021-06-15</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>7</td>
+<td>Bruce</td>
+<td>Wayne</td>
+<td>bruce.wayne@example.com</td>
+<td>http://linkedin.com/in/brucewayne</td>
+<td>http://headshot_url_bruce.com</td>
+<td>bruce_discord</td>
+<td>Bruce is a software engineer with a knack for ...</td>
+<td>2021-07-10</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>8</td>
+<td>Diana</td>
+<td>Prince</td>
+<td>diana.prince@example.com</td>
+<td>http://linkedin.com/in/dianaprince</td>
+<td>http://headshot_url_diana.com</td>
+<td>diana_discord</td>
+<td>Diana is a data analyst with a strong backgrou...</td>
+<td>2021-08-05</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>9</td>
+<td>Martha</td>
+<td>Kent</td>
+<td>martha.kent@example.com</td>
+<td>http://linkedin.com/in/marthakent</td>
+<td>http://headshot_url_martha.com</td>
+<td>martha_discord</td>
+<td>Martha, a seasoned product manager, excels in ...</td>
+<td>2021-09-20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>10</td>
+<td>Peter</td>
+<td>Parker</td>
+<td>peter.parker@example.com</td>
+<td>http://linkedin.com/in/peterparker</td>
+<td>http://headshot_url_peter.com</td>
+<td>peter_discord</td>
+<td>Peter is a creative content writer with a flai...</td>
+<td>2021-10-15</td>
+</tr>
 </tbody>
 </table>
 
